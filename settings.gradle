@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        mavenLocal()
+        maven {
+            name = "inductiveautomation-releases"
+            url = uri("https://nexus.inductiveautomation.com/repository/inductiveautomation-releases/")
+        }
+        maven {
+            url = uri("https://nexus.inductiveautomation.com/repository/inductiveautomation-beta")
+        }
+        maven {
+            url = uri("https://nexus.inductiveautomation.com/repository/public")
+        }
+    }
+}
+
+rootProject.name = "ignition-agent-tools"
+
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            name = "inductiveautomation-releases"
+            url = uri("https://nexus.inductiveautomation.com/repository/inductiveautomation-releases/")
+        }
+        maven {
+            url = uri("https://nexus.inductiveautomation.com/repository/inductiveautomation-beta")
+        }
+        maven {
+            url = uri("https://nexus.inductiveautomation.com/repository/public")
+        }
+        mavenCentral()
+    }
+}
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+include(":", ":common", ":gateway")
